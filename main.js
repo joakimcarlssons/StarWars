@@ -1,8 +1,8 @@
 let currentMin = 1;
-let currentMax = 8;
+let currentMax = 6;
 let currentPage = 1;
 let currentCharacter = 1;
-let charsPerPage = 8
+let charsPerPage = currentMax;
 let maxPage = 0;
 let charValues = ["height", "mass", "hair_color", "skin_color", "birth_year", "gender"]
 let planetValues = ["rotation_period", "orbital_period", "diameter", "climate", "gravity", "terrain"]
@@ -47,7 +47,19 @@ function getCharacters(min, max) {
         
         getData(`https://swapi.dev/api/people/${i}/`).then(p => {
                 
-                li.innerText = p["name"]
+                li.innerHTML = `<span class='animated-arrow'>
+                <span class='the-arrow -left'>
+                  <span class='shaft'></span>
+                </span>
+                <span class='char'>
+                  <span class='text'>
+                    <p>${p["name"]}</p>
+                  </span>
+                  <span class='the-arrow -right'>
+                    <span class='shaft'></span>
+                  </span>
+                </span>
+              </span>`
 
                 if(li.innerText == "undefined") {
                     li.remove();
@@ -86,12 +98,12 @@ leftArr.addEventListener("click", () => {
         return;
     }
     else {
+        currentPage -= 1
         currentMin -= charsPerPage
         currentMax -= charsPerPage
-        currentPage -= 1
 
-        showLoader(".character-list")
         getCharacters(currentMin, currentMax)
+        showLoader(".character-list")
     }
 })
 
@@ -100,12 +112,12 @@ rightArr.addEventListener("click", () => {
         return;
     }
     else {
+        currentPage += 1;
         currentMin += charsPerPage
         currentMax += charsPerPage
-        currentPage += 1;
 
-        showLoader(".character-list")
         getCharacters(currentMin, currentMax)
+        showLoader(".character-list")
     }
 })
 
