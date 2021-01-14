@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Star Wars</title>
+
+        <!--Font awesome CDN-->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">   
+        
+        <!-- Internal stylesheet -->
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+
+    <header>
+        <h1>Star Wars Catalog</h1>
+    </header>
+    <main>
+
+        <div class="box characters">
+            <div class="box-item box-header">
+                <h2>Characters</h2>
+            </div>
+            <div class="character-list">
+                <ul>
+                </ul>
+            </div>
+
+            <div class="box-item toggle">
+                <i class="nav-left fas fa-caret-left"></i>
+                <span class="side-num">1 / 8</span>
+                <i class="nav-right fas fa-caret-right"></i>
+            </div>
+        </div>
+
+        <div class="box details">
+            <div class="box-item box-header">
+                <h2>Details</h2>
+            </div>
+
+            <div class="details-wrapper">
+                <div class="top">
+                    <h2></h2>
+                    <p>Height: <span class="height"></span>cm</p>
+                    <p>Mass: <span class="mass"></span>kg</p>
+                    <p>Hair color: <span class="hair_color"></span></p>
+                    <p>Skin color: <span class="skin_color"></span></p>
+                    <p>Birth year: <span class="birth_year"></span>BBY</p>
+                    <p>Gender: <span class="gender"></span></p>
+                </div>
+                <div class="bottom">
+                    <h2></h2>
+                    <p>Rotation period: <span class="rotation_period"></span>h</p>
+                    <p>Orbital period: <span class="orbital_period"></span>days</p>
+                    <p>Diameter: <span class="diameter"></span>km</p>
+                    <p>Climate: <span class="climate"></span></p>
+                    <p>Gravity: <span class="gravity"></span></p>
+                    <p>Terrain: <span class="terrain"></span></p>
+                </div>
+            </div>
+
+        </div>
+
+    </main>
+
+
+    <script src="main.js"></script>
+    </body>
+</html>
