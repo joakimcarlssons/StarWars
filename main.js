@@ -66,11 +66,18 @@ function getCharacters(min, max) {
                 }
         })
 
-        // Add lick event to character
+        // Add click event to character
         li.addEventListener("click", () => {
+            for(let o of document.querySelectorAll("li")){
+                o.classList.remove("chosen")
+            }
+
+            li.classList.add("chosen")
+
             showLoader(".top")
             showLoader(".bottom")
             fillDetails(`https://swapi.dev/api/people/${i}/`)
+
         })
 
 
